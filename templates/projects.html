@@ -1,0 +1,12 @@
+<div class="row container">
+  <div class="col-sm-6 col-md-4" ng-repeat="project in projects" ng-controller="projectsController">
+    <div class="thumbnail">
+      <img src="{{project.Image}}" alt="project image">
+      <div class="caption">
+        <h3>{{project.Title}}</h3>
+        <p>{{project.Description}}</p>
+        <p><a href="{{project.Link}}" target="_blank" class="btn btn-primary" role="button">View</a></p>
+      </div>
+    </div>
+  </div>
+</div>

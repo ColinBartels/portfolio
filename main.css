@@ -1,0 +1,11 @@
+.active {
+	font-weight: bold;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+.carousel {
+	margin-bottom: 7%;
+}
