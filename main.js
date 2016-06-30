@@ -8,7 +8,10 @@ var myApp = angular.module('myApp', ['ui.router']);
 
 
 // Configure app
-myApp.config(function($stateProvider) {
+myApp.config(function($stateProvider, $urlRouterProvider) {
+	// For any unmatched url, redirect to /state1
+  	$urlRouterProvider.otherwise("/");
+
     $stateProvider
 	.state('home', {
 		url:'/',
@@ -20,16 +23,16 @@ myApp.config(function($stateProvider) {
 		templateUrl: 'templates/projects.html',
 		controller: 'projectsController',
 	})
-	.state('about', {
-		url: '/about',
-		templateUrl: 'templates/about.html',
+	.state('contact', {
+		url: '/contact',
+		templateUrl: 'templates/contact.html',
 		//controller: 'aboutController'
 	});
 });
 
-myApp.run(['$state', function ($state) {
-	$state.transitionTo('home');
-}]);
+//myApp.run(['$state', function ($state) {
+	//$state.transitionTo('home');
+//}]);
 
 var projectsController = myApp.controller('projectsController', function($scope) {
 		$scope.projects = projectData
