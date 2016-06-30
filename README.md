@@ -1,7 +1,7 @@
 Colin Bartels
 
 1. What is the URL of this project on your student web-server?
-	http://students.washington.edu/bartelsc/info343/portfolio
+	http://students.washington.edu/bartelsc/portfolio
 
 2. Did you receive help from any other sources (classmates, etc.)? If so, please list who.
 N/A
