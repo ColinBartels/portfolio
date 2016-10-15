@@ -1,8 +1,3 @@
-var projectData = null;
-$.getJSON("data/projects.json", function(data) {
-	projectData = data;
-});
-
 // Create app
 var myApp = angular.module('myApp', ['ui.router']);
 
@@ -16,7 +11,7 @@ myApp.config(function($stateProvider, $locationProvider) {
 	.state('home', {
 		url:'/',
 		templateUrl: 'templates/home.html',
-		//controller: 'HomeController',
+		controller: 'homeController',
 	})
 	.state('projects', {
 		url:'/projects',
@@ -30,6 +25,26 @@ myApp.config(function($stateProvider, $locationProvider) {
 	});
 });
 
+var devLogos = null;
+$.getJSON("data/devLogos.json", function(data) {
+	devLogos = data;
+});
+
+var secLogos = null;
+$.getJSON("data/secLogos.json", function(data) {
+	secLogos = data;
+});
+
+var projectData = null;
+$.getJSON("data/projects.json", function(data) {
+	projectData = data;
+});
+
+var homeController = myApp.controller('homeController', function($scope) {
+	$scope.devLogos = devLogos;
+	$scope.secLogos = secLogos;
+});
+
 var projectsController = myApp.controller('projectsController', function($scope) {
-		$scope.projects = projectData
+	$scope.projects = projectData;
 });
