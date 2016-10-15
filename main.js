@@ -6,11 +6,11 @@ $.getJSON("data/projects.json", function(data) {
 // Create app
 var myApp = angular.module('myApp', ['ui.router']);
 
-
 // Configure app
-myApp.config(function($stateProvider, $urlRouterProvider) {
-	// For any unmatched url, redirect to /state1
-  	$urlRouterProvider.otherwise("/");
+myApp.config(function($stateProvider, $locationProvider) {
+	
+	// remove # in url
+  	$locationProvider.html5Mode(true);
 
     $stateProvider
 	.state('home', {
@@ -29,10 +29,6 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 		//controller: 'aboutController'
 	});
 });
-
-//myApp.run(['$state', function ($state) {
-	//$state.transitionTo('home');
-//}]);
 
 var projectsController = myApp.controller('projectsController', function($scope) {
 		$scope.projects = projectData
